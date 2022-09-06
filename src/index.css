@@ -1,3 +1,6 @@
+:root {
+  font-size: 62.5%;
+}
 html {
   height: 300vh;
   background-color: black;
@@ -13,20 +16,5 @@ html {
   background-repeat: no-repeat;
   background-position: 30% 50%;
   z-index: -1;
-}
-
-h1,
-h2 {
-  font-size: 96px;
-  display: inline;
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  text-align: center;
-  background-color: #ffffff;
-  background: linear-gradient(90deg, #ffffff 40%, #a2a2a2 100%);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+  pointer-events: none;
 }

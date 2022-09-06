@@ -1,10 +1,11 @@
 import { ThemeProvider } from "theme-ui";
+import Main from "./components/Menu";
 import theme from "./theme";
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <h1>Sher Sheikh</h1>
+      <Main />
       <div id="bg" />
     </ThemeProvider>
   );
