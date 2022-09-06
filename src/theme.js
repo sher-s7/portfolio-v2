@@ -63,7 +63,8 @@ const theme = {
       fontFamily: "body",
       fontWeight: "light",
       fontSize: [1, 2]
-    }
+    },
+    link: {}
   }
 };
 
