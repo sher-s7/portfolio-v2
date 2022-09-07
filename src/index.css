@@ -2,8 +2,13 @@
   font-size: 62.5%;
 }
 html {
-  height: 300vh;
-  background-color: black;
+  scrollbar-color: #545454 #171717;
+}
+::-webkit-scrollbar {
+  background-color: #171717;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #545454;
 }
 #bg {
   width: 100vw;

@@ -63,8 +63,16 @@ const theme = {
       fontFamily: "body",
       fontWeight: "light",
       fontSize: [1, 2]
-    },
-    link: {}
+    }
+  },
+  links: {
+    nav: {
+      fontFamily: "monospace",
+      fontWeight: "body",
+      fontSize: [1, 2],
+      textDecoration: "none",
+      color: "text"
+    }
   }
 };
 
