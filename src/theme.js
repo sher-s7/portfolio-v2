@@ -35,7 +35,6 @@ const theme = {
   },
   colors: {
     text: "#fff",
-    textGrey: "#A1A1A1",
     gradient: "#a2a2a2",
     background: "#000"
   },
@@ -58,7 +57,6 @@ const theme = {
       fontSize: "46px"
     },
     small: {
-      color: "textGrey",
       letterSpacing: "main",
       fontFamily: "body",
       fontWeight: "light",

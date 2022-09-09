@@ -23,3 +23,7 @@ html {
   z-index: -1;
   pointer-events: none;
 }
+
+model-viewer {
+  --progress-bar-color: transparent;
+}

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.3",
+    "@google/model-viewer": "^1.12.1",
     "@mdx-js/react": "^2.1.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
