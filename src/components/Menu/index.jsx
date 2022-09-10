@@ -29,60 +29,71 @@ const Main = () => {
     <Flex
       as="section"
       sx={{
-        justifyContent: "flex-start",
-        alignItems: "center",
-        flexDirection: "column",
-        height: "100vh"
+        height: "100vh",
+        justifyContent: "center",
+        alignItems: ["flex-start", "center"]
       }}
     >
-      <Box
-        sx={{
-          height: ["250px"],
-          mt: "clamp(20px, 10vh, 80px)",
-          "model-viewer": {
-            height: "100%",
-            opacity: modelVisible ? 1 : 0,
-            transition: "opacity 0.5s ease"
-          }
-        }}
-      >
-        <model-viewer
-          ref={modelViewer}
-          src={model}
-          camera-controls
-          disable-zoom
-          orbit-sensitivity={1}
-          interaction-prompt="none"
-          camera-orbit={cameraOrbit}
-          interpolation-decay="170"
-          exposure="0.5"
-          loading="eager"
-        ></model-viewer>
-      </Box>
       <Flex
         sx={{
+          justifyContent: "flex-start",
+          alignItems: "center",
           flexDirection: "column",
-          alignItems: "flex-end",
-          mt: "67px",
-          mb: "137px"
+          height: "100%",
+          maxWidth: "1440px",
+          maxHeight: [null, "762px", null, "900px"]
         }}
       >
-        <Heading as="h1">Sher Sheikh</Heading>
-        <Text as="h2" variant="small" sx={{ opacity: 0.6 }}>
-          software developer
-        </Text>
-      </Flex>
-      <Flex
-        sx={{
-          maxWidth: ["375px", "none"],
-          gap: ["0 22px", null, "0 48px"],
-          flexWrap: "wrap",
-          justifyContent: "center"
-        }}
-      >
-        {Object.keys(NAV_ITEMS).map((key, i) => {
-          return <NavLink navItem={NAV_ITEMS[key]} key={key + i} />;
-        })}
+        <Box
+          sx={{
+            height: ["150px", "200px", null, "250px"],
+            ml: "10px",
+            mt: ["10vh", null, "35px", "80px"],
+            "model-viewer": {
+              height: "100%",
+              opacity: modelVisible ? 1 : 0,
+              transition: "opacity 0.5s ease"
+            }
+          }}
+        >
+          <model-viewer
+            ref={modelViewer}
+            src={model}
+            camera-controls
+            disable-zoom
+            orbit-sensitivity={1}
+            interaction-prompt="none"
+            camera-orbit={cameraOrbit}
+            interpolation-decay="170"
+            exposure="0.5"
+            loading="eager"
+          ></model-viewer>
+        </Box>
+        <Flex
+          sx={{
+            flexDirection: "column",
+            alignItems: "flex-end",
+            mt: "85px",
+            mb: "125px"
+          }}
+        >
+          <Heading as="h1">Sher Sheikh</Heading>
+          <Text as="h2" variant="small" sx={{ opacity: 0.6 }}>
+            software developer
+          </Text>
+        </Flex>
+        <Flex
+          sx={{
+            maxWidth: ["375px", "none"],
+            gap: ["0 22px", null, "0 48px"],
+            flexWrap: "wrap",
+            justifyContent: "center"
+          }}
+        >
+          {Object.keys(NAV_ITEMS).map((key, i) => {
+            return <NavLink navItem={NAV_ITEMS[key]} key={key + i} />;
+          })}
+        </Flex>
       </Flex>
     </Flex>
   );

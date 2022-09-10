@@ -12,6 +12,7 @@ const NavLink = ({ navItem }) => {
       className={`${clicked ? "clicked" : ""}`}
       sx={{
         overflow: "hidden",
+        isolation: "isolate",
         borderRadius: "6px",
         position: "relative",
         transition: "0.2s ease-out, transform 0.1s linear",

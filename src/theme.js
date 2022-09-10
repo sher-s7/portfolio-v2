@@ -1,5 +1,5 @@
 const theme = {
-  breakpoints: ["640px", "1024px"],
+  breakpoints: ["640px", "1024px", "1440px"],
   fonts: {
     body: "Inter, system-ui, sans-serif",
     heading: 'Inter, "Avenir Next", sans-serif',
@@ -18,8 +18,9 @@ const theme = {
     "2.4rem", // 3
     "4rem", // 4
     "4.6rem", // 5
-    "6.4rem", // 6
-    "9.6rem" // 7
+    "5.5rem", // 6
+    "6.4rem", // 7
+    "9.6rem" // 8
   ],
   styles: {
     root: {
@@ -41,7 +42,7 @@ const theme = {
   text: {
     heading: {
       display: "inline",
-      fontSize: [5, 6, 7],
+      fontSize: [6, 7, 8],
       letterSpacing: "main",
       textAlign: "center",
       backgroundColor: "text",
