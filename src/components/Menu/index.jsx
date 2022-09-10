@@ -85,7 +85,7 @@ const Main = () => {
         <Flex
           sx={{
             maxWidth: ["375px", "none"],
-            gap: ["0 22px", null, "0 48px"],
+            gap: ["22px 22px", null, "0 48px"],
             flexWrap: "wrap",
             justifyContent: "center"
           }}

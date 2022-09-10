@@ -16,7 +16,9 @@ const NavLink = ({ navItem }) => {
         borderRadius: "6px",
         position: "relative",
         transition: "0.2s ease-out, transform 0.1s linear",
-        borderTop: "1px solid transparent",
+        borderTop: "1px solid",
+        borderColor: ["rgba(255, 255, 255, 0.1)", "transparent"],
+        boxShadow: ["-3px 5px 15px rgba(0, 0, 0, 0.2)", "none"],
         a: {
           p: "10px 15px",
           display: "block",
@@ -34,7 +36,7 @@ const NavLink = ({ navItem }) => {
           height: "100%",
           background:
             "linear-gradient(45deg, transparent 0%, rgba(255, 255, 255, 0.2) 100%)",
-          opacity: 0
+          opacity: [1, 0]
         },
         "::before": {
           content: '"⬤"',
@@ -49,10 +51,10 @@ const NavLink = ({ navItem }) => {
           transition: "0s"
         },
         ":hover": {
-          borderColor: [null, "rgba(255, 255, 255, 0.1)"],
-          boxShadow: [null, "-3px 5px 15px rgba(0, 0, 0, 0.2)"],
+          borderColor: "rgba(255, 255, 255, 0.1)",
+          boxShadow: "-3px 5px 15px rgba(0, 0, 0, 0.2)",
           "::after": {
-            opacity: [null, 1]
+            opacity: 1
           }
         },
         ":active": {
