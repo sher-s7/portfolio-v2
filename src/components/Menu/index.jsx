@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Box, Flex, Heading, Text } from "theme-ui";
 import { NAV_ITEMS } from "../../utils/constants";
 import NavLink from "./NavLink";
-import model from "./icons/code.glb";
+import model from "./icons/model.glb";
 import { useRef } from "react";
 
 const ORBIT_POSITIONS = {
@@ -40,7 +40,6 @@ const Main = () => {
           alignItems: "center",
           flexDirection: "column",
           height: "100%",
-          maxWidth: "1440px",
           maxHeight: [null, "762px", null, "900px"]
         }}
       >
@@ -78,7 +77,7 @@ const Main = () => {
           }}
         >
           <Heading as="h1">Sher Sheikh</Heading>
-          <Text as="h2" variant="small" sx={{ opacity: 0.6 }}>
+          <Text as="span" variant="small" sx={{ opacity: 0.6 }}>
             software developer
           </Text>
         </Flex>

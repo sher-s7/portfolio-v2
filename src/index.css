@@ -3,6 +3,7 @@
 }
 html {
   scrollbar-color: #545454 #171717;
+  scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
   background-color: #171717;
@@ -23,7 +24,10 @@ html {
   z-index: -1;
   pointer-events: none;
 }
-
 model-viewer {
   --progress-bar-color: transparent;
+}
+h2 {
+  scroll-margin-top: 100px;
+  scroll-snap-margin-top: 100px;
 }

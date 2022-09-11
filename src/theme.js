@@ -48,14 +48,14 @@ const theme = {
       backgroundColor: "text",
       background: (theme) =>
         `linear-gradient(90deg, ${theme.colors.text} 40%, ${theme.colors.gradient} 100%)`,
-      "-moz-background-clip": "text",
-      "background-clip": "text",
-      "-webkit-text-fill-color": "transparent",
-      "-moz-text-fill-color": "transparent"
+      MozBackgroundClip: "text",
+      backgroundClip: "text",
+      textFillColor: "transparent",
+      MozTextFillColor: "transparent"
     },
     h2: {
       variant: "text.heading",
-      fontSize: "46px"
+      fontSize: [5, 6, 7]
     },
     small: {
       letterSpacing: "main",

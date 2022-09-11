@@ -23,7 +23,7 @@ const NavLink = ({ navItem }) => {
           p: "10px 15px",
           display: "block",
           cursor: "pointer",
-          "-webkit-tap-highlight-color": "transparent"
+          WebkitTapHighlightColor: "transparent"
         },
         "::after": {
           content: "''",
@@ -74,8 +74,15 @@ const NavLink = ({ navItem }) => {
         href={`#${navItem}`}
         onClick={(event) => {
           let currentTargetRect = event.currentTarget.getBoundingClientRect();
+          console.log(
+            event.pageX,
+            currentTargetRect.left,
+            event.pageY,
+            currentTargetRect.top
+          );
           const event_offsetX = event.pageX - currentTargetRect.left,
-            event_offsetY = event.pageY - currentTargetRect.top;
+            event_offsetY =
+              event.pageY - currentTargetRect.top - window.scrollY;
           setClickCoords({
             x: parseInt(event_offsetX),
             y: parseInt(event_offsetY)
