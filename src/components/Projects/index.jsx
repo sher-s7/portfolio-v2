@@ -4,9 +4,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import slides from "./slides";
-import { useRef } from "react";
-import { useEffect } from "react";
 import { useState } from "react";
+import SlideInfo from "./SlideInfo";
+import { NextArrow, PrevArrow } from "./Arrows";
 
 const settings = {
   dots: false,
@@ -16,16 +16,13 @@ const settings = {
   slidesToShow: 3,
   slidesToScroll: 1,
   centerMode: true,
-  centerPadding: 0
+  centerPadding: 0,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />
 };
 
 const Project = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  useEffect(() => {
-    setTimeout(() => {
-      console.log(document.querySelector(".slick-slide").clientWidth);
-    }, 2000);
-  }, []);
   return (
     <Flex as="section" sx={{ justifyContent: "center" }}>
       <Flex
@@ -43,6 +40,7 @@ const Project = () => {
                 position: "relative",
                 pb: "113%",
                 borderRadius: "30px",
+                transition: "border-radius 0.3s ease",
                 overflow: "hidden",
                 img: {
                   position: "absolute",
@@ -64,7 +62,13 @@ const Project = () => {
                     "linear-gradient(37.96deg, rgba(0, 0, 0, 0.49) 60.06%, rgba(136, 136, 136, 0) 75%)"
                 }
               },
-              "&:not(.slick-center)": { transform: "scale(0.5)", opacity: 0.4 }
+              "&:not(.slick-center)": {
+                transform: "scale(0.5)",
+                opacity: 0.4,
+                ".imgContainer": {
+                  borderRadius: "70px"
+                }
+              }
             }
           }}
         >
@@ -74,8 +78,8 @@ const Project = () => {
               setCurrentSlide(nextSlide)
             }
           >
-            {slides.map((slide) => (
-              <Box className="imgContainer">
+            {slides.map((slide, i) => (
+              <Box key={`slide-${i}`} className="imgContainer">
                 <Image src={slide.imgSrc} />
               </Box>
             ))}
@@ -88,23 +92,11 @@ const Project = () => {
             }}
           >
             {slides.map((slide, i) => (
-              <Flex
-                sx={{
-                  position: "absolute",
-                  left: ["calc(307px * 2)"],
-                  transform: "translateX(-100%)"
-                }}
-              >
-                <Box
-                  key={slide.name + i}
-                  sx={{
-                    opacity: currentSlide === i ? 1 : 0,
-                    transition: "opacity 0.5s ease"
-                  }}
-                >
-                  {slide.name}
-                </Box>
-              </Flex>
+              <SlideInfo
+                key={slide.name + i}
+                slide={slide}
+                isCurrent={currentSlide === i}
+              />
             ))}
           </Box>
         </Box>

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Box, Flex, Heading, Text } from "theme-ui";
 import { NAV_ITEMS } from "../../utils/constants";
-import NavLink from "./NavLink";
+import StylizedButton from "../common/StylizedButton";
 import model from "./icons/model.glb";
 import { useRef } from "react";
 
@@ -76,7 +76,9 @@ const Main = () => {
             mb: "125px"
           }}
         >
-          <Heading as="h1">Sher Sheikh</Heading>
+          <Heading as="h1" sx={{ lineHeight: "body" }}>
+            Sher Sheikh
+          </Heading>
           <Text as="span" variant="small" sx={{ opacity: 0.6 }}>
             software developer
           </Text>
@@ -90,7 +92,15 @@ const Main = () => {
           }}
         >
           {Object.keys(NAV_ITEMS).map((key, i) => {
-            return <NavLink navItem={NAV_ITEMS[key]} key={key + i} />;
+            return (
+              <StylizedButton
+                href={`#${NAV_ITEMS[key]}`}
+                key={key + i}
+                type="a"
+              >
+                {NAV_ITEMS[key]}
+              </StylizedButton>
+            );
           })}
         </Flex>
       </Flex>

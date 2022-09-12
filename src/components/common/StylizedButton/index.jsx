@@ -1,9 +1,18 @@
 import { useState } from "react";
 import { Box, Link } from "theme-ui";
+import PropTypes from "prop-types";
 
 const TRANSITION_LENGTH = 0.75;
 
-const NavLink = ({ navItem }) => {
+const StylizedButton = ({
+  type,
+  href,
+  onClick,
+  styleOnHover,
+  forwardSx,
+  children,
+  ...props
+}) => {
   const [clicked, setClicked] = useState(false);
   const [clickCoords, setClickCoords] = useState({ x: 0, y: 0 });
   const [clickTimeout, setClickTimeout] = useState(null);
@@ -17,9 +26,13 @@ const NavLink = ({ navItem }) => {
         position: "relative",
         transition: "0.2s ease-out, transform 0.1s linear",
         borderTop: "1px solid",
-        borderColor: ["rgba(255, 255, 255, 0.1)", "transparent"],
-        boxShadow: ["-3px 5px 15px rgba(0, 0, 0, 0.2)", "none"],
-        a: {
+        borderColor: styleOnHover
+          ? ["rgba(255, 255, 255, 0.1)", "transparent"]
+          : "rgba(255, 255, 255, 0.1)",
+        boxShadow: styleOnHover
+          ? ["-3px 5px 15px rgba(0, 0, 0, 0.2)", "none"]
+          : "-3px 5px 15px rgba(0, 0, 0, 0.2)",
+        ".btn": {
           p: "10px 15px",
           display: "block",
           cursor: "pointer",
@@ -36,7 +49,7 @@ const NavLink = ({ navItem }) => {
           height: "100%",
           background:
             "linear-gradient(45deg, transparent 0%, rgba(255, 255, 255, 0.2) 100%)",
-          opacity: [1, 0]
+          opacity: styleOnHover ? [1, 0] : 1
         },
         "::before": {
           content: '"⬤"',
@@ -66,20 +79,18 @@ const NavLink = ({ navItem }) => {
           transform: "translate(-50%, -50%) scale(1)",
           opacity: 0,
           transition: `transform ${TRANSITION_LENGTH}s ease, opacity ${TRANSITION_LENGTH}s ease`
-        }
+        },
+        ...forwardSx
       }}
+      {...props}
     >
       <Link
-        variant="nav"
-        href={`#${navItem}`}
+        className="btn"
+        variant={type === "a" ? "links.primary" : "buttons.primary"}
+        as={type || "a"}
+        href={href}
         onClick={(event) => {
           let currentTargetRect = event.currentTarget.getBoundingClientRect();
-          console.log(
-            event.pageX,
-            currentTargetRect.left,
-            event.pageY,
-            currentTargetRect.top
-          );
           const event_offsetX = event.pageX - currentTargetRect.left,
             event_offsetY =
               event.pageY - currentTargetRect.top - window.scrollY;
@@ -99,12 +110,23 @@ const NavLink = ({ navItem }) => {
               setClicked(false);
             }, TRANSITION_LENGTH * 1000)
           );
+
+          onClick && onClick();
         }}
       >
-        {navItem}
+        {children}
       </Link>
     </Box>
   );
 };
 
-export default NavLink;
+StylizedButton.propTypes = {
+  type: PropTypes.oneOf(["a", "button"]),
+  styleOnHover: PropTypes.bool
+};
+StylizedButton.defaultProps = {
+  type: "button",
+  styleOnHover: true
+};
+
+export default StylizedButton;

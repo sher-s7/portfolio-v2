@@ -29,7 +29,7 @@ const theme = {
   },
   lineHeights: {
     body: 1,
-    heading: 1
+    heading: 1.3
   },
   letterSpacings: {
     main: "-0.04em"
@@ -40,6 +40,14 @@ const theme = {
     background: "#000"
   },
   text: {
+    default: {
+      fontFamily: "body",
+      fontWeight: "body",
+      fontSize: 1,
+      letterSpacing: "main",
+      color: "text",
+      textDecoration: "none"
+    },
     heading: {
       display: "inline",
       fontSize: [6, 7, 8],
@@ -65,12 +73,25 @@ const theme = {
     }
   },
   links: {
-    nav: {
+    primary: {
       fontFamily: "monospace",
       fontWeight: "body",
       fontSize: [1, 2],
       textDecoration: "none",
       color: "text"
+    }
+  },
+  buttons: {
+    primary: {
+      fontFamily: "monospace",
+      fontWeight: "body",
+      fontSize: [1, 2],
+      textDecoration: "none",
+      color: "text",
+      backgroundColor: "transparent",
+      border: "none",
+      lineHeight: "body",
+      cursor: "pointer"
     }
   }
 };
