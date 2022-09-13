@@ -18,22 +18,42 @@ const settings = {
   centerMode: true,
   centerPadding: 0,
   nextArrow: <NextArrow />,
-  prevArrow: <PrevArrow />
+  prevArrow: <PrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ]
 };
+
+const MAX_WIDTHS = [200, 400, 870, 1200];
 
 const Project = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   return (
     <Flex as="section" sx={{ justifyContent: "center" }}>
       <Flex
-        sx={{ flexDirection: "column", justifyContent: "center", gap: "45px" }}
+        sx={{
+          flexDirection: "column",
+          justifyContent: "center",
+          gap: "45px",
+          pb: ["100px", null, "120px"]
+        }}
       >
         <Heading as="h2" variant="h2" id={NAV_ITEMS.projects}>
           Projects
         </Heading>
         <Box
           sx={{
-            maxWidth: "920px",
+            maxWidth: [
+              `${MAX_WIDTHS[0]}px`,
+              `${MAX_WIDTHS[1]}px`,
+              `${MAX_WIDTHS[2]}px`,
+              `${MAX_WIDTHS[3]}px`
+            ],
             ".slick-slide": {
               transition: "0.5s ease",
               ".imgContainer": {
@@ -66,7 +86,7 @@ const Project = () => {
                 transform: "scale(0.5)",
                 opacity: 0.4,
                 ".imgContainer": {
-                  borderRadius: "70px"
+                  borderRadius: [null, null, "70px", null]
                 }
               }
             }
@@ -96,6 +116,7 @@ const Project = () => {
                 key={slide.name + i}
                 slide={slide}
                 isCurrent={currentSlide === i}
+                maxWidths={MAX_WIDTHS}
               />
             ))}
           </Box>

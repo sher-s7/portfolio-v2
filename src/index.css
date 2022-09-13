@@ -28,6 +28,10 @@ model-viewer {
   --progress-bar-color: transparent;
 }
 h2 {
-  scroll-margin-top: 100px;
-  scroll-snap-margin-top: 100px;
+  scroll-margin-top: 150px;
+  scroll-snap-margin-top: 150px;
+}
+
+section {
+  padding: 50px 0;
 }

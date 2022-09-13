@@ -3,19 +3,25 @@ import { Box, Flex, Link, Text } from "theme-ui";
 import MouseText from "../common/MouseText";
 import { ReactComponent as LinkIcon } from "./icons/link.svg";
 
-const SlideInfo = ({ slide, isCurrent }) => {
+const SlideInfo = ({ slide, isCurrent, maxWidths }) => {
   const [mouseText, setMouseText] = useState(null);
   return (
     <>
       <Flex
         sx={{
           position: "absolute",
-          left: ["calc(307px * 2)"],
+          left: [
+            `${maxWidths[0]}px`,
+            `${maxWidths[1]}px`,
+            `calc(${maxWidths[2] / 3}px * 2)`,
+            `calc(${maxWidths[3] / 3}px * 2)`
+          ],
           transform: "translateX(-100%)",
           flexDirection: "column",
           pointerEvents: isCurrent ? "auto" : "none",
           opacity: isCurrent ? 1 : 0,
-          transition: "opacity 0.5s ease"
+          transition: "opacity 0.5s ease",
+          width: ["100%", null, "auto", null]
         }}
       >
         <Box
@@ -26,7 +32,14 @@ const SlideInfo = ({ slide, isCurrent }) => {
           <Text as="p" sx={{ fontSize: 2, fontWeight: "bold", mb: "5px" }}>
             {slide.name}
           </Text>
-          <Text as="p" sx={{ lineHeight: 1.2, maxWidth: "295px" }}>
+          <Text
+            as="p"
+            sx={{
+              lineHeight: 1.2,
+              maxWidth: [null, null, "295px", null],
+              fontSize: [0, 1]
+            }}
+          >
             {slide.description}
           </Text>
         </Box>

@@ -13,19 +13,22 @@ const fadeIn = keyframes`
 
 const MouseText = ({ children }) => {
   const mousePosition = useMousePosition();
+  const isDesktop = window.matchMedia("(min-width: 992px)");
   return (
-    <Text
-      sx={{
-        position: "fixed",
-        top: mousePosition.y + 20 + "px",
-        left: mousePosition.x + 15 + "px",
-        pointerEvents: "none",
-        fontWeight: "bold",
-        animation: `${fadeIn} 0.25s ease`
-      }}
-    >
-      {children}
-    </Text>
+    isDesktop.matches && (
+      <Text
+        sx={{
+          position: "fixed",
+          top: mousePosition.y + 20 + "px",
+          left: mousePosition.x + 15 + "px",
+          pointerEvents: "none",
+          fontWeight: "bold",
+          animation: `${fadeIn} 0.25s ease`
+        }}
+      >
+        {children}
+      </Text>
+    )
   );
 };
 

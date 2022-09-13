@@ -2,6 +2,7 @@ import breddit from "./images/breddit.png";
 import partplanner from "./images/partplanner.png";
 import coc from "./images/coc.png";
 import weather from "./images/weather.png";
+import sprite from "./images/sprite.png";
 
 const slides = [
   {
@@ -26,6 +27,14 @@ const slides = [
       'A clone of the card game "Cards Against Humanity". Created using Express.js, WebSocket and React.',
     code: "https://github.com/I3uckwheat/cards-of-carousal",
     demo: "https://www.cardsofcarousal.com/"
+  },
+  {
+    imgSrc: sprite,
+    name: "spritesheet-animate",
+    description:
+      "A spritesheet animator created using JavaScript. Scroll down to see it in action.",
+    code: "https://github.com/sher-s7/js-spritesheet-animator",
+    demo: "https://sher-s7.github.io/js-spritesheet-animator/"
   },
   {
     imgSrc: weather,

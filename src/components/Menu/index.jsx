@@ -29,7 +29,7 @@ const Main = () => {
     <Flex
       as="section"
       sx={{
-        height: "100vh",
+        height: ["auto", "100vh"],
         justifyContent: "center",
         alignItems: ["flex-start", "center"]
       }}
@@ -46,8 +46,7 @@ const Main = () => {
         <Box
           sx={{
             height: ["150px", "200px", null, "250px"],
-            ml: "10px",
-            mt: ["10vh", null, "35px", "80px"],
+            mt: ["20px", null, "35px", "80px"],
             "model-viewer": {
               height: "100%",
               opacity: modelVisible ? 1 : 0,
@@ -72,8 +71,8 @@ const Main = () => {
           sx={{
             flexDirection: "column",
             alignItems: "flex-end",
-            mt: "85px",
-            mb: "125px"
+            mt: ["75px", "85px", null, null],
+            mb: ["110px", "125px", null, null]
           }}
         >
           <Heading as="h1" sx={{ lineHeight: "body" }}>

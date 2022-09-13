@@ -8,7 +8,7 @@ export const NextArrow = ({ onClick }) => {
       sx={{
         position: "absolute",
         top: "50%",
-        right: "-55px",
+        right: ["-65px", "-75px", "-55px", null],
         transform: "translateY(-50%)"
       }}
     >
@@ -42,7 +42,7 @@ export const PrevArrow = ({ onClick }) => {
       sx={{
         position: "absolute",
         top: "50%",
-        left: "-55px",
+        left: ["-65px", "-75px", "-55px", null],
         transform: "translateY(-50%)"
       }}
     >
