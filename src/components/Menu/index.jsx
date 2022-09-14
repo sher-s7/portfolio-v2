@@ -29,14 +29,14 @@ const Main = () => {
     <Flex
       as="section"
       sx={{
-        height: ["auto", "100vh"],
+        height: "100vh",
         justifyContent: "center",
-        alignItems: ["flex-start", "center"]
+        alignItems: "center"
       }}
     >
       <Flex
         sx={{
-          justifyContent: "flex-start",
+          justifyContent: ["center", "flex-start"],
           alignItems: "center",
           flexDirection: "column",
           height: "100%",
@@ -46,7 +46,7 @@ const Main = () => {
         <Box
           sx={{
             height: ["150px", "200px", null, "250px"],
-            mt: ["20px", null, "35px", "80px"],
+            mt: ["-50px", "20px", "35px", "80px"],
             "model-viewer": {
               height: "100%",
               opacity: modelVisible ? 1 : 0,

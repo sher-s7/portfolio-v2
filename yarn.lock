@@ -8070,6 +8070,11 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==
 
+spritesheet-animate@^1.0.3:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/spritesheet-animate/-/spritesheet-animate-1.0.4.tgz#b31b0efb8480dc856364e077b9714d6d220fcd5c"
+  integrity sha512-NaabDpHWsaoJqYWNijntUGeZhZ7vC16xVkGM+KHT69Fu4MoL1L5at6vjuXlwlAUR94eANwO+GZ7x1nLshEkD9w==
+
 stable@^0.1.8:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/stable/-/stable-0.1.8.tgz#836eb3c8382fe2936feaf544631017ce7d47a3cf"

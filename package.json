@@ -11,6 +11,7 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
+    "spritesheet-animate": "^1.0.3",
     "theme-ui": "^0.14.5"
   },
   "scripts": {
