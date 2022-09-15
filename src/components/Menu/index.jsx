@@ -1,7 +1,7 @@
 import "@google/model-viewer/dist/model-viewer";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Box, Flex, Heading, Text } from "theme-ui";
+import { Flex, Grid, Heading, Text } from "theme-ui";
 import { NAV_ITEMS } from "../../utils/constants";
 import StylizedButton from "../common/StylizedButton";
 import model from "./icons/model.glb";
@@ -34,23 +34,24 @@ const Main = () => {
         alignItems: "center"
       }}
     >
-      <Flex
+      <Grid
         sx={{
-          justifyContent: ["center", "flex-start"],
-          alignItems: "center",
-          flexDirection: "column",
+          gridTemplateRows: "1fr auto 1fr",
+          gap: 0,
           height: "100%",
           maxHeight: [null, "762px", null, "900px"]
         }}
       >
-        <Box
+        <Flex
           sx={{
+            justifyContent: "center",
             height: ["150px", "200px", null, "250px"],
-            mt: ["-50px", "20px", "35px", "80px"],
+            margin: ["50px 0 auto", 0],
             "model-viewer": {
               height: "100%",
               opacity: modelVisible ? 1 : 0,
-              transition: "opacity 0.5s ease"
+              transition: "opacity 0.5s ease",
+              ml: ["9px", "13px"]
             }
           }}
         >
@@ -66,43 +67,45 @@ const Main = () => {
             exposure="0.5"
             loading="eager"
           ></model-viewer>
-        </Box>
-        <Flex
-          sx={{
-            flexDirection: "column",
-            alignItems: "flex-end",
-            mt: ["75px", "85px", null, null],
-            mb: ["110px", "125px", null, null]
-          }}
-        >
-          <Heading as="h1" sx={{ lineHeight: "body" }}>
-            Sher Sheikh
-          </Heading>
-          <Text as="span" variant="small" sx={{ opacity: 0.6 }}>
-            software developer
-          </Text>
         </Flex>
-        <Flex
-          sx={{
-            maxWidth: ["375px", "none"],
-            gap: ["22px 22px", null, "0 48px"],
-            flexWrap: "wrap",
-            justifyContent: "center"
-          }}
-        >
-          {Object.keys(NAV_ITEMS).map((key, i) => {
-            return (
-              <StylizedButton
-                href={`#${NAV_ITEMS[key]}`}
-                key={key + i}
-                type="a"
-              >
-                {NAV_ITEMS[key]}
-              </StylizedButton>
-            );
-          })}
+        <Flex sx={{ justifyContent: "center" }}>
+          <Flex
+            sx={{
+              flexDirection: "column",
+              alignItems: "flex-end"
+            }}
+          >
+            <Heading as="h1" sx={{ lineHeight: "body" }}>
+              Sher Sheikh
+            </Heading>
+            <Text as="span" variant="small" sx={{ opacity: 0.6 }}>
+              software developer
+            </Text>
+          </Flex>
         </Flex>
-      </Flex>
+        <Flex sx={{ alignItems: "center" }}>
+          <Flex
+            sx={{
+              maxWidth: ["375px", "none"],
+              gap: ["22px 22px", null, "0 48px"],
+              flexWrap: "wrap",
+              justifyContent: "center"
+            }}
+          >
+            {Object.keys(NAV_ITEMS).map((key, i) => {
+              return (
+                <StylizedButton
+                  href={`#${NAV_ITEMS[key]}`}
+                  key={key + i}
+                  type="a"
+                >
+                  {NAV_ITEMS[key]}
+                </StylizedButton>
+              );
+            })}
+          </Flex>
+        </Flex>
+      </Grid>
     </Flex>
   );
 };

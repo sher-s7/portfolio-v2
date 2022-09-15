@@ -13,7 +13,8 @@ const About = () => {
       sprite_width: 300,
       sprite_height: 300,
       sprites_per_line: 7,
-      number_of_sprites: 47
+      number_of_sprites: 47,
+      onScrollSensitivity: 0.15
     };
     animateSpritesheet(element, settings);
   }, []);
