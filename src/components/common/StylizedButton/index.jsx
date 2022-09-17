@@ -26,9 +26,7 @@ const StylizedButton = ({
         position: "relative",
         transition: "0.2s ease-out, transform 0.1s linear",
         borderTop: "1px solid",
-        borderColor: styleOnHover
-          ? ["rgba(255, 255, 255, 0.1)", "transparent"]
-          : "rgba(255, 255, 255, 0.1)",
+        borderColor: styleOnHover ? ["light", "transparent"] : "light",
         boxShadow: styleOnHover
           ? ["-3px 5px 15px rgba(0, 0, 0, 0.2)", "none"]
           : "-3px 5px 15px rgba(0, 0, 0, 0.2)",
@@ -60,11 +58,11 @@ const StylizedButton = ({
           transform: "translate(-50%, -50%) scale(0)",
           fontFamily: "Arial",
           fontSize: "20rem",
-          color: "rgba(255,255,255,0.1)",
+          color: "light",
           transition: "0s"
         },
         ":hover": {
-          borderColor: "rgba(255, 255, 255, 0.1)",
+          borderColor: "light",
           boxShadow: "-3px 5px 15px rgba(0, 0, 0, 0.2)",
           "::after": {
             opacity: 1

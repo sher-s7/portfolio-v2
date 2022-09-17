@@ -1,24 +1,29 @@
-import { Box, Flex, Heading, Text } from "theme-ui";
+import { Flex, Heading } from "theme-ui";
+import { NAV_ITEMS } from "../../utils/constants";
+import Email from "./Email";
+import Linkedin from "./Linkedin";
+
+const WIDTH = ["663px"];
 
 const Contact = () => {
   return (
     <Flex as="section" sx={{ justifyContent: "center" }}>
-      <Flex sx={{ flexDirection: "column" }}>
-        <Heading as="h2" variant="h2">
+      <Flex
+        sx={{
+          flexDirection: "column",
+          gap: "20px",
+          ".contact-container": {
+            backgroundColor: "rgba(255,255,255,0.12)",
+            boxShadow: "0px 2.5px 10px rgba(0, 0, 0, 0.4)",
+            svg: { width: "100%", height: "100%" }
+          }
+        }}
+      >
+        <Heading as="h2" variant="h2" id={NAV_ITEMS.contact} sx={{ mb: "5px" }}>
           Get in touch
         </Heading>
-        <Flex
-          sx={{
-            flexDirection: "column"
-          }}
-        >
-          <Text sx={{ fontSize: 1, fontWeight: "bold" }}>Linkedin</Text>
-          <Flex as="a">
-            <Box sx={{ mr: "34px" }}>icon</Box>
-            <Text>https://www.linkedin.com/in/sher-sheikh/</Text>
-            <Box sx={{ ml: "auto" }}>icon</Box>
-          </Flex>
-        </Flex>
+        <Linkedin width={WIDTH} />
+        <Email width={WIDTH} />
       </Flex>
     </Flex>
   );

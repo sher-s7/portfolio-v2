@@ -37,7 +37,8 @@ const theme = {
   colors: {
     text: "#fff",
     gradient: "#a2a2a2",
-    background: "#000"
+    background: "#000",
+    light: "rgba(255,255,255,0.1)"
   },
   text: {
     default: {
