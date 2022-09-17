@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { NAV_ITEMS } from "../../utils/constants";
 import { animateSpritesheet, METHODS } from "spritesheet-animate";
 import { Flex, Heading, Text, Paragraph, Box } from "theme-ui";
-import spritesheet from "./spritesheet_small.png";
+import spritesheet from "./spritesheet.png";
 
 const About = () => {
   useEffect(() => {
@@ -14,7 +14,7 @@ const About = () => {
       sprite_height: 300,
       sprites_per_line: 7,
       number_of_sprites: 47,
-      onScrollSensitivity: 0.15
+      onScrollSensitivity: 0.12
     };
     animateSpritesheet(element, settings);
   }, []);
