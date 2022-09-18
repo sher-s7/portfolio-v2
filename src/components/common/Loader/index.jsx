@@ -41,7 +41,7 @@ const Loader = ({ size, color = "white", bg = "light" }) => {
           border: "2px solid",
           borderColor: bg,
           borderTopColor: color,
-          animation: `${spin} 2s linear infinite`
+          animation: `${spin} 1s linear infinite`
         }}
       />
     </Flex>

@@ -12,7 +12,7 @@ const encode = (data) => {
 
 const TOAST_LENGTH = 3000;
 
-const Email = ({ width }) => {
+const Email = ({ width, addToast }) => {
   const [mouseText, setMouseText] = useState(null);
   const [copied, setCopied] = useState(false);
 
@@ -41,10 +41,13 @@ const Email = ({ width }) => {
         setTimeout(() => {
           setSubmitting(false);
           if (!res.ok) {
-            setDisplayError(true);
-            setTimeout(() => {
-              setDisplayError(false);
-            }, TOAST_LENGTH);
+            // setDisplayError(true);
+            // setTimeout(() => {
+            //   setDisplayError(false);
+            // }, TOAST_LENGTH);
+            addToast(
+              "There was an error. Please try again, or email me directly."
+            );
           } else {
             setDisplaySuccess(true);
             setTimeout(() => {
@@ -116,7 +119,7 @@ const Email = ({ width }) => {
               <Text
                 onMouseEnter={() => setMouseText("copy to clipboard")}
                 onMouseLeave={() => setMouseText(null)}
-                onClick={() => !copied && setCopied(true)}
+                onClick={() => addToast("email copied to clipboard")}
                 as="button"
                 type="button"
                 sx={{
@@ -204,14 +207,14 @@ const Email = ({ width }) => {
           </Flex>
         </Flex>
       </Flex>
-      {mouseText && <MouseText>{mouseText}</MouseText>}
-      {copied && <Toast>email copied to clipboard</Toast>}
-      {displaySuccess && <Toast>Message sent!</Toast>}
+      {/* {mouseText && <MouseText>{mouseText}</MouseText>}
+      {copied && <Toast length={TOAST_LENGTH}>email copied to clipboard</Toast>}
+      {displaySuccess && <Toast length={TOAST_LENGTH}>Message sent!</Toast>}
       {displayError && (
         <Toast length={TOAST_LENGTH}>
           There was an error. Please try again, or email me directly.
         </Toast>
-      )}
+      )} */}
     </>
   );
 };

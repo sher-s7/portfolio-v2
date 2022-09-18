@@ -5,7 +5,7 @@ import Linkedin from "./Linkedin";
 
 const WIDTH = ["663px"];
 
-const Contact = () => {
+const Contact = ({ addToast }) => {
   return (
     <Flex as="section" sx={{ justifyContent: "center" }}>
       <Flex
@@ -24,7 +24,7 @@ const Contact = () => {
           Get in touch
         </Heading>
         <Linkedin width={WIDTH} />
-        <Email width={WIDTH} />
+        <Email width={WIDTH} addToast={addToast} />
       </Flex>
     </Flex>
   );
