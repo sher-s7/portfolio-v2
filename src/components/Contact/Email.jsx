@@ -144,6 +144,7 @@ const Email = ({ width }) => {
                 type="text"
                 aria-label="Your email"
                 placeholder="Your email"
+                name="email"
                 onChange={(e) => setUserEmail(e.target.value)}
                 value={userEmail}
                 sx={{
@@ -166,6 +167,7 @@ const Email = ({ width }) => {
               <Textarea
                 placeholder="Message"
                 aria-label="Message"
+                name="message"
                 onChange={(e) => setMessage(e.target.value)}
                 value={message}
                 rows="8"
