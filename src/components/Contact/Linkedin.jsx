@@ -1,8 +1,17 @@
+import { useEffect, useState } from "react";
 import { Box, Flex, Text } from "theme-ui";
 import { ReactComponent as Arrow } from "./icons/contact-arrow.svg";
 import { ReactComponent as Search } from "./icons/search.svg";
 
 const Linkedin = ({ width }) => {
+  const [hover, setHover] = useState(false);
+  useEffect(() => {
+    if (hover) {
+      setTimeout(() => {
+        setHover(false);
+      }, 1500);
+    }
+  }, [hover]);
   return (
     <Flex
       sx={{
@@ -17,14 +26,15 @@ const Linkedin = ({ width }) => {
         href="https://www.linkedin.com/in/sher-sheikh/"
         target="_blank"
         rel="noreferrer"
-        className="contact-container"
+        className={`contact-container${hover ? " hover" : ""}`}
+        onMouseEnter={() => setHover(true)}
         sx={{
           alignItems: "center",
           padding: "11.25px 12px 11.25px 25px",
           position: "relative",
           overflow: "hidden",
           textDecoration: "none",
-          ":hover": {
+          "&.hover": {
             ".shine": {
               transform: "translateX(100%)",
               transition: "1s ease",

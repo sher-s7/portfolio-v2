@@ -133,7 +133,7 @@ const Main = () => {
                 <StylizedButton
                   href={`#${NAV_ITEMS[key]}`}
                   key={key + i}
-                  type="a"
+                  as="a"
                   forwardSx={{
                     animation: `${fadeInUp} 1s ease`,
                     animationDelay: `${1 + 0.1 * i}s`,

@@ -56,7 +56,7 @@ const SlideInfo = ({ slide, isCurrent, maxWidths }) => {
           }}
         >
           <Link
-            onMouseOver={() => setMouseText("code")}
+            onMouseEnter={() => setMouseText("code")}
             onMouseLeave={() => setMouseText(null)}
             variant="text.default"
             href={slide.code}
@@ -66,7 +66,7 @@ const SlideInfo = ({ slide, isCurrent, maxWidths }) => {
             {"</>"}
           </Link>
           <Link
-            onMouseOver={() => setMouseText("demo")}
+            onMouseEnter={() => setMouseText("demo")}
             onMouseLeave={() => setMouseText(null)}
             href={slide.demo}
             target="_blank"

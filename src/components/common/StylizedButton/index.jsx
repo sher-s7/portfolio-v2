@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { Box, Link } from "theme-ui";
 import PropTypes from "prop-types";
+import Loader from "../Loader";
 
 const TRANSITION_LENGTH = 0.75;
 
 const StylizedButton = ({
-  type,
+  as,
   href,
   onClick,
   styleOnHover,
+  loading,
   forwardSx,
   children,
   ...props
@@ -34,7 +36,8 @@ const StylizedButton = ({
           p: "10px 15px",
           display: "block",
           cursor: "pointer",
-          WebkitTapHighlightColor: "transparent"
+          WebkitTapHighlightColor: "transparent",
+          transition: "opacity 0.25s ease"
         },
         "::after": {
           content: "''",
@@ -80,12 +83,11 @@ const StylizedButton = ({
         },
         ...forwardSx
       }}
-      {...props}
     >
       <Link
         className="btn"
-        variant={type === "a" ? "links.primary" : "buttons.primary"}
-        as={type || "a"}
+        variant={as === "a" ? "links.primary" : "buttons.primary"}
+        as={as || "a"}
         href={href}
         onClick={(event) => {
           let currentTargetRect = event.currentTarget.getBoundingClientRect();
@@ -111,19 +113,29 @@ const StylizedButton = ({
 
           onClick && onClick();
         }}
+        {...props}
       >
-        {children}
+        {loading && <Loader size="20px" />}
+        <Box
+          sx={{
+            opacity: loading ? 0 : 1,
+            transition: loading ? "opacity 0.2s ease" : "0s"
+          }}
+        >
+          {children}
+        </Box>
       </Link>
     </Box>
   );
 };
 
 StylizedButton.propTypes = {
-  type: PropTypes.oneOf(["a", "button"]),
+  as: PropTypes.oneOf(["a", "button"]),
+  type: PropTypes.string,
   styleOnHover: PropTypes.bool
 };
 StylizedButton.defaultProps = {
-  type: "button",
+  as: "button",
   styleOnHover: true
 };
 
