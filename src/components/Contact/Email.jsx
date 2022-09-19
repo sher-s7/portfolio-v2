@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { useState } from "react";
 import { Box, Flex, Input, Text, Textarea } from "theme-ui";
+import { ToastsContext } from "../../Context/Toasts";
 import MouseText from "../common/MouseText";
 import StylizedButton from "../common/StylizedButton";
-import Toast from "../common/Toast";
 
 const encode = (data) => {
   return Object.keys(data)
@@ -10,25 +11,13 @@ const encode = (data) => {
     .join("&");
 };
 
-const TOAST_LENGTH = 3000;
-
-const Email = ({ width, addToast }) => {
+const Email = () => {
+  const { addToast } = useContext(ToastsContext);
   const [mouseText, setMouseText] = useState(null);
-  const [copied, setCopied] = useState(false);
 
   const [userEmail, setUserEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [displaySuccess, setDisplaySuccess] = useState(false);
-  const [displayError, setDisplayError] = useState(false);
-
-  useEffect(() => {
-    if (copied) {
-      setTimeout(() => {
-        setCopied(false);
-      }, TOAST_LENGTH);
-    }
-  }, [copied]);
 
   const handleSubmit = (e) => {
     setSubmitting(true);
@@ -41,28 +30,20 @@ const Email = ({ width, addToast }) => {
         setTimeout(() => {
           setSubmitting(false);
           if (!res.ok) {
-            // setDisplayError(true);
-            // setTimeout(() => {
-            //   setDisplayError(false);
-            // }, TOAST_LENGTH);
             addToast(
               "There was an error. Please try again, or email me directly."
             );
           } else {
-            setDisplaySuccess(true);
-            setTimeout(() => {
-              setDisplaySuccess(false);
-            }, TOAST_LENGTH);
+            addToast("Message sent!");
           }
         }, 500);
       })
-      .catch((error) => {
+      .catch(() => {
         setTimeout(() => {
           setSubmitting(false);
-          setDisplayError(true);
-          setTimeout(() => {
-            setDisplayError(false);
-          }, TOAST_LENGTH);
+          addToast(
+            "There was an error. Please try again, or email me directly."
+          );
         }, 500);
       });
 
@@ -79,7 +60,6 @@ const Email = ({ width, addToast }) => {
       <Flex
         sx={{
           flexDirection: "column",
-          width,
           gap: "6.25px"
         }}
       >
@@ -207,14 +187,7 @@ const Email = ({ width, addToast }) => {
           </Flex>
         </Flex>
       </Flex>
-      {/* {mouseText && <MouseText>{mouseText}</MouseText>}
-      {copied && <Toast length={TOAST_LENGTH}>email copied to clipboard</Toast>}
-      {displaySuccess && <Toast length={TOAST_LENGTH}>Message sent!</Toast>}
-      {displayError && (
-        <Toast length={TOAST_LENGTH}>
-          There was an error. Please try again, or email me directly.
-        </Toast>
-      )} */}
+      {mouseText && <MouseText>{mouseText}</MouseText>}
     </>
   );
 };

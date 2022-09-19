@@ -3,7 +3,7 @@ import { Box, Flex, Text } from "theme-ui";
 import { ReactComponent as Arrow } from "./icons/contact-arrow.svg";
 import { ReactComponent as Search } from "./icons/search.svg";
 
-const Linkedin = ({ width }) => {
+const Linkedin = () => {
   const [hover, setHover] = useState(false);
   useEffect(() => {
     if (hover) {
@@ -16,7 +16,6 @@ const Linkedin = ({ width }) => {
     <Flex
       sx={{
         flexDirection: "column",
-        width,
         gap: "6.25px"
       }}
     >

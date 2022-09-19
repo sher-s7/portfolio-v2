@@ -3,14 +3,14 @@ import { NAV_ITEMS } from "../../utils/constants";
 import Email from "./Email";
 import Linkedin from "./Linkedin";
 
-const WIDTH = ["663px"];
-
-const Contact = ({ addToast }) => {
+const Contact = () => {
   return (
     <Flex as="section" sx={{ justifyContent: "center" }}>
       <Flex
         sx={{
           flexDirection: "column",
+          width: "100%",
+          maxWidth: "663px",
           gap: "20px",
           ".contact-container": {
             backgroundColor: "rgba(255,255,255,0.12)",
@@ -23,8 +23,8 @@ const Contact = ({ addToast }) => {
         <Heading as="h2" variant="h2" id={NAV_ITEMS.contact} sx={{ mb: "5px" }}>
           Get in touch
         </Heading>
-        <Linkedin width={WIDTH} />
-        <Email width={WIDTH} addToast={addToast} />
+        <Linkedin />
+        <Email />
       </Flex>
     </Flex>
   );
