@@ -18,7 +18,6 @@ const Email = () => {
   const [userEmail, setUserEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     if (submitting) return e.preventDefault();
@@ -37,7 +36,6 @@ const Email = () => {
             );
           } else {
             addToast("Message sent!");
-            setSubmitted(true);
             clearForm();
           }
         }, 2000);
@@ -64,10 +62,10 @@ const Email = () => {
       <Flex
         sx={{
           flexDirection: "column",
-          gap: "6.25px"
+          gap: ["7px", "10px"]
         }}
       >
-        <Text sx={{ fontSize: 1, fontWeight: "bold" }}>Email</Text>
+        <Text sx={{ fontSize: [0, 1], fontWeight: "bold" }}>Email</Text>
         <Flex
           as="form"
           name="contact"
@@ -77,18 +75,18 @@ const Email = () => {
           <Flex
             className="contact-container"
             sx={{
-              fontSize: 2,
+              fontSize: [1, 2],
               fontWeight: "light",
               flexDirection: "column",
               width: "100%",
               position: "relative",
-              padding: "12.5px"
+              padding: ["10px", "12.5px"]
             }}
           >
             <Flex
               sx={{
                 alignItems: "center",
-                gap: "17px",
+                gap: "10px",
                 pl: "10px",
                 mb: "10px",
                 "span, button": {
@@ -107,7 +105,7 @@ const Email = () => {
                 as="button"
                 type="button"
                 sx={{
-                  backgroundColor: "transparent",
+                  backgroundColor: ["light", "transparent"],
                   border: "none",
                   py: "5px",
                   px: "7px",
@@ -180,11 +178,7 @@ const Email = () => {
             </Box>
           </Flex>
           <Flex sx={{ gap: "15px" }}>
-            <StylizedButton
-              type="submit"
-              disabled={submitted}
-              loading={submitting}
-            >
+            <StylizedButton type="submit" loading={submitting}>
               submit
             </StylizedButton>
           </Flex>

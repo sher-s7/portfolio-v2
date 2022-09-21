@@ -16,10 +16,10 @@ const Linkedin = () => {
     <Flex
       sx={{
         flexDirection: "column",
-        gap: "6.25px"
+        gap: ["7px", "10px"]
       }}
     >
-      <Text sx={{ fontSize: 1, fontWeight: "bold" }}>Linkedin</Text>
+      <Text sx={{ fontSize: [0, 1], fontWeight: "bold" }}>Linkedin</Text>
       <Flex
         as="a"
         href="https://www.linkedin.com/in/sher-sheikh/"
@@ -29,7 +29,7 @@ const Linkedin = () => {
         onMouseEnter={() => setHover(true)}
         sx={{
           alignItems: "center",
-          padding: "11.25px 12px 11.25px 25px",
+          padding: ["10px 10px 10px 20px", "10px 10px 10px 25px"],
           position: "relative",
           overflow: "hidden",
           textDecoration: "none",
@@ -74,13 +74,23 @@ const Linkedin = () => {
             }}
           ></Box>
         </Box>
-        <Box sx={{ mr: "34px", width: "16.25px", height: "16.25px" }}>
+        <Box
+          sx={{
+            display: ["none", "block"],
+            mr: ["10px", "21px"],
+            width: "16.25px",
+            height: "16.25px"
+          }}
+        >
           <Search />
         </Box>
         <Text
           sx={{
-            fontSize: 3,
+            fontSize: [1, 3],
             fontWeight: "light",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
             span: {
               opacity: 0.4,
               fontSize: "inherit",
@@ -88,11 +98,20 @@ const Linkedin = () => {
             }
           }}
         >
-          <Text as="span">https://www.</Text>
+          <Text as="span">https://</Text>
+          <Text as="span" sx={{ display: ["none", "inline"] }}>
+            www.
+          </Text>
           linkedin.com
           <Text as="span">/in/sher-sheikh/</Text>
         </Text>
-        <Box sx={{ ml: "auto", width: "27.5px", height: "27.5px" }}>
+        <Box
+          sx={{
+            ml: "auto",
+            width: ["20px", "27.5px"],
+            height: ["20px", "27.5px"]
+          }}
+        >
           <Arrow />
         </Box>
       </Flex>

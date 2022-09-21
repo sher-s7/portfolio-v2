@@ -19,7 +19,7 @@ const About = () => {
     animateSpritesheet(element, settings);
   }, []);
   return (
-    <Flex as="section" sx={{ justifyContent: "center" }}>
+    <Flex as="section" sx={{ justifyContent: "center", pb: ["25px", "50px"] }}>
       <Flex sx={{ flexDirection: "column", gap: ["40px"] }}>
         <Heading as="h2" variant="h2" id={NAV_ITEMS.about}>
           About me
@@ -27,7 +27,8 @@ const About = () => {
         <Flex
           sx={{
             flexDirection: ["column", null, "row"],
-            alignItems: "center"
+            alignItems: "center",
+            gap: ["25px", 0]
           }}
         >
           <Flex sx={{ flexDirection: "column", px: "25px" }}>

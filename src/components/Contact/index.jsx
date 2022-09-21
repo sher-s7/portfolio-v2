@@ -12,6 +12,7 @@ const Contact = () => {
           width: "100%",
           maxWidth: "663px",
           gap: "20px",
+          px: "25px",
           ".contact-container": {
             backgroundColor: "rgba(255,255,255,0.12)",
             boxShadow: "0px 2.5px 10px rgba(0, 0, 0, 0.4)",

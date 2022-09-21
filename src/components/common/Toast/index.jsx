@@ -22,7 +22,6 @@ const Toast = ({ length, index, close, children }) => {
   const savedCallback = useRef(close);
 
   useEffect(() => {
-    console.log("changed");
     savedCallback.current = close;
   }, [close]);
 
