@@ -37,7 +37,10 @@ const StylizedButton = ({
           display: "block",
           cursor: "pointer",
           WebkitTapHighlightColor: "transparent",
-          transition: "opacity 0.25s ease"
+          ":disabled": {
+            opacity: 0.5,
+            cursor: "default"
+          }
         },
         "::after": {
           content: "''",

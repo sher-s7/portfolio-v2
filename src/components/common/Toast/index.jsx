@@ -22,6 +22,7 @@ const Toast = ({ length, index, close, children }) => {
   const savedCallback = useRef(close);
 
   useEffect(() => {
+    console.log("changed");
     savedCallback.current = close;
   }, [close]);
 
@@ -43,7 +44,8 @@ const Toast = ({ length, index, close, children }) => {
         textShadow: "-5px 5px 10px rgba(0,0,0,0.5)",
         position: "absolute",
         transform: `translateY(calc(-100% * ${index * 1.1}))`,
-        transition: "transform 0.25s ease"
+        transition: "transform 0.25s ease",
+        pointerEvents: "none"
       }}
     >
       {children}

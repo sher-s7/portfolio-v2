@@ -18,8 +18,10 @@ const Email = () => {
   const [userEmail, setUserEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
+    if (submitting) return e.preventDefault();
     setSubmitting(true);
     fetch("/", {
       method: "POST",
@@ -35,8 +37,10 @@ const Email = () => {
             );
           } else {
             addToast("Message sent!");
+            setSubmitted(true);
+            clearForm();
           }
-        }, 500);
+        }, 2000);
       })
       .catch(() => {
         setTimeout(() => {
@@ -99,7 +103,7 @@ const Email = () => {
               <Text
                 onMouseEnter={() => setMouseText("copy to clipboard")}
                 onMouseLeave={() => setMouseText(null)}
-                onClick={() => addToast("email copied to clipboard")}
+                onClick={() => addToast("Email copied to clipboard")}
                 as="button"
                 type="button"
                 sx={{
@@ -124,6 +128,7 @@ const Email = () => {
             </Flex>
             <Box>
               <Input
+                required
                 type="text"
                 aria-label="Your email"
                 placeholder="Your email"
@@ -148,6 +153,7 @@ const Email = () => {
             </Box>
             <Box>
               <Textarea
+                required
                 placeholder="Message"
                 aria-label="Message"
                 name="message"
@@ -174,12 +180,9 @@ const Email = () => {
             </Box>
           </Flex>
           <Flex sx={{ gap: "15px" }}>
-            <StylizedButton type="button" onClick={clearForm}>
-              clear
-            </StylizedButton>
             <StylizedButton
               type="submit"
-              disabled={submitting}
+              disabled={submitted}
               loading={submitting}
             >
               submit

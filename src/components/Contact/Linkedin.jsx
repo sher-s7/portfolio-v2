@@ -9,7 +9,7 @@ const Linkedin = () => {
     if (hover) {
       setTimeout(() => {
         setHover(false);
-      }, 1500);
+      }, 1000);
     }
   }, [hover]);
   return (
@@ -33,6 +33,8 @@ const Linkedin = () => {
           position: "relative",
           overflow: "hidden",
           textDecoration: "none",
+          transition: "background-color 0.25s ease",
+          ":hover": { backgroundColor: "rgba(255,255,255,0.15)" },
           "&.hover": {
             ".shine": {
               transform: "translateX(100%)",

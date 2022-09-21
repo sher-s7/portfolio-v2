@@ -15,8 +15,10 @@ const App = () => {
   const [toasts, setToasts] = useState([]);
 
   const addToast = (toastText) => {
-    setToasts([...toasts, { id: toastCounter, text: toastText }]);
-    toastCounter++;
+    if (!toasts.find((toast) => toast.text === toastText)) {
+      setToasts((toasts) => [...toasts, { id: toastCounter, text: toastText }]);
+      toastCounter++;
+    }
   };
 
   const removeToast = (id) => {
