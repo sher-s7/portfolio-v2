@@ -13,7 +13,7 @@ const fadeIn = keyframes`
 
 const MouseText = ({ children }) => {
   const mousePosition = useMousePosition();
-  const isDesktop = window.matchMedia("(min-width: 992px)");
+  const isDesktop = window.matchMedia("(min-width: 1100px)");
   return (
     isDesktop.matches &&
     mousePosition.x &&

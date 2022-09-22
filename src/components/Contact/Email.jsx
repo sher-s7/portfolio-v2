@@ -92,6 +92,13 @@ const Email = () => {
                 "span, button": {
                   fontSize: "inherit",
                   fontWeight: "inherit"
+                },
+                "#copy-email": {
+                  opacity: 0,
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  pointerEvents: "none"
                 }
               }}
             >
@@ -101,7 +108,17 @@ const Email = () => {
               <Text
                 onMouseEnter={() => setMouseText("copy to clipboard")}
                 onMouseLeave={() => setMouseText(null)}
-                onClick={() => addToast("Email copied to clipboard")}
+                onClick={() => {
+                  if (navigator && navigator.clipboard) {
+                    navigator.clipboard.writeText("sher.sheikh77@gmail.com");
+                  } else if (document.execCommand) {
+                    const email = document.getElementById("copy-email");
+                    email.select();
+                    email.setSelectionRange(0, 99999);
+                    document.execCommand("copy");
+                  }
+                  addToast("Email copied to clipboard");
+                }}
                 as="button"
                 type="button"
                 sx={{
@@ -123,6 +140,7 @@ const Email = () => {
               >
                 sher.sheikh77@gmail.com
               </Text>
+              <input id="copy-email" value="sher.sheikh77@gmail.com" readOnly />
             </Flex>
             <Box>
               <Input

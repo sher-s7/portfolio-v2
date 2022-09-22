@@ -93,6 +93,16 @@ const theme = {
       border: "none",
       lineHeight: "body",
       cursor: "pointer"
+    },
+    clear: {
+      fontFamily: "body",
+      color: "text",
+      backgroundColor: "transparent",
+      border: "none",
+      lineHeight: "body",
+      cursor: "pointer",
+      letterSpacing: "main",
+      padding: 0
     }
   }
 };

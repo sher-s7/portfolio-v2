@@ -5,6 +5,7 @@ import Toast from "./components/common/Toast";
 import Contact from "./components/Contact";
 import Main from "./components/Menu";
 import Project from "./components/Projects";
+import Resume from "./components/Resume";
 import { ToastsContext } from "./Context/Toasts";
 import theme from "./theme";
 
@@ -32,6 +33,7 @@ const App = () => {
         <Project />
         <About />
         <Contact />
+        <Resume />
         <Flex
           sx={{
             flexDirection: "column",
