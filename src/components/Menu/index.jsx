@@ -53,6 +53,7 @@ const Main = () => {
   return (
     <Flex
       as="section"
+      id="main"
       sx={{
         height: "100vh",
         justifyContent: "center",

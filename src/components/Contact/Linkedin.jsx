@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Box, Flex, Text } from "theme-ui";
-import { ReactComponent as Arrow } from "./icons/contact-arrow.svg";
+import { ReactComponent as Arrow } from "../../assets/arrow.svg";
 import { ReactComponent as Search } from "./icons/search.svg";
 
 const Linkedin = () => {

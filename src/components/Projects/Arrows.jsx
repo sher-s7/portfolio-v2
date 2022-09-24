@@ -1,6 +1,6 @@
 import { Box } from "theme-ui";
 import StylizedButton from "../common/StylizedButton";
-import { ReactComponent as ArrowRight } from "./icons/arrow-right.svg";
+import { ReactComponent as ArrowRight } from "../../assets/arrow-right.svg";
 
 export const NextArrow = ({ onClick }) => {
   return (

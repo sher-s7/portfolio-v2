@@ -30,7 +30,7 @@ const Resume = () => {
         >
           {desktop ? (
             <>
-              <CircleFillBtn href="./resume.pdf" download>
+              <CircleFillBtn href="./Sher_Sheikh_Resume.pdf" download>
                 Download PDF
               </CircleFillBtn>
               <CircleFillBtn
@@ -46,7 +46,7 @@ const Resume = () => {
             <>
               <StylizedButton
                 as="a"
-                href="./resume.pdf"
+                href="./Sher_Sheikh_Resume.pdf"
                 download
                 styleOnHover={false}
               >

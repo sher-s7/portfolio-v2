@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useState } from "react";
 import { Box, Flex, Input, Text, Textarea } from "theme-ui";
-import { ToastsContext } from "../../Context/Toasts";
+import { ToastsContext } from "../../context/Toasts";
 import MouseText from "../common/MouseText";
 import StylizedButton from "../common/StylizedButton";
 
