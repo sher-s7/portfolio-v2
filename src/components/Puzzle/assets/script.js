@@ -141,25 +141,23 @@ document.getElementById("shuffle").onclick = () => {
   }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  const shuffle = document.getElementById("shuffle");
-  const observer = new window.IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        observer.unobserve(shuffle);
+const shuffle = document.getElementById("shuffle");
+const observer = new window.IntersectionObserver(
+  ([entry]) => {
+    if (entry.isIntersecting) {
+      observer.unobserve(shuffle);
+      setTimeout(() => {
+        scramble();
         setTimeout(() => {
           scramble();
-          setTimeout(() => {
-            scramble();
-          }, 500);
         }, 500);
-        return;
-      }
-    },
-    {
-      root: null // set offset 0.1 means trigger if atleast 10% of element in viewport
+      }, 500);
+      return;
     }
-  );
+  },
+  {
+    root: null // set offset 0.1 means trigger if atleast 10% of element in viewport
+  }
+);
 
-  observer.observe(shuffle);
-});
+observer.observe(shuffle);

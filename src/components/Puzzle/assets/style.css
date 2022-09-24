@@ -1,4 +1,4 @@
-#puzzleSection {
+#puzzle {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +15,7 @@
   overflow: hidden;
   padding-bottom: 100%;
   transition: transform 0.25s ease;
+  will-change: transform;
 }
 
 .square {
@@ -25,14 +26,14 @@
   padding: 0;
   transition: 0.25s ease;
   cursor: pointer;
+  will-change: transform;
 }
 
 .square .content {
   border-radius: 6px;
   padding-bottom: 100%;
   background: linear-gradient(45deg, #131313, #2b2b2b);
-  box-shadow: 1px -1px 0 1px rgba(255, 255, 255, 0.125);
-  transition: box-shadow 0.25s ease;
+  box-shadow: inset -1px 1px 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .empty {
@@ -46,13 +47,13 @@
   transform: translate(-50%, -50%);
   font-size: 30px;
   font-family: "IBM Plex Mono", Menlo, monospace;
-  transition: opacity 0.25s ease 0.5s;
+  transition: opacity 0.3s ease 0.5s;
   color: #e2e2e2;
 }
 
 .puzzle.complete {
   transform: scale(0.9);
-  transition: transform 0.25s ease 2.5s;
+  transition: transform 0.25s ease 3s;
   pointer-events: none;
 }
 
@@ -74,26 +75,22 @@
 
 .puzzle.complete::after {
   opacity: 1;
-  transition: opacity 0.25s ease 2.5s;
+  transition: opacity 0.25s ease 3s;
 }
 
 .puzzle.complete .square {
   transform: scale(1.2);
-  transition: 0.25s ease, transform 0.25s ease 2.5s, opacity 0.25s ease 1s;
-}
-
-.puzzle.complete .content {
-  border-radius: 0;
-  box-shadow: 1px -1px 0 1px transparent;
-  transition: border-radius 0.25s ease 2.5s, box-shadow 0.2s ease;
+  transition: 0.25s ease, transform 0.25s ease 3s;
 }
 
 .puzzle.complete .empty {
   opacity: 1;
+  transition: 0.25s ease, transform 0.25s ease 3s, opacity 0.35s ease 2s;
 }
 
 .puzzle.complete .number {
   opacity: 0;
+  transition: opacity 0.3s ease 1s;
 }
 
 #shuffle {
