@@ -35,7 +35,7 @@ const theme = {
     main: "-0.04em"
   },
   colors: {
-    text: "#fff",
+    text: "#e2e2e2",
     gradient: "#a2a2a2",
     background: "#000",
     light: "rgba(255,255,255,0.1)"

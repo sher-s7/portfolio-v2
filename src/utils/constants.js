@@ -3,5 +3,6 @@ export const NAV_ITEMS = {
   about: "about",
   contact: "contact",
   resume: "resume",
-  github: "github"
+  github: "github",
+  puzzle: "puzzleSection"
 };
