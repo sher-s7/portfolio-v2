@@ -1,5 +1,4 @@
 import { keyframes } from "@emotion/react";
-import { useEffect } from "react";
 import { useState } from "react";
 import { Button } from "theme-ui";
 
@@ -28,15 +27,7 @@ const CircleFillBtn = ({
   const [scale, setScale] = useState("0%");
   const [transitionTime, setTransitionTime] = useState("0.7s");
   const [init, setInit] = useState(false);
-  const isDesktop = window.matchMedia("(min-width: 1100px)");
-  const [desktop, setDesktop] = useState(isDesktop.matches);
-  const isDesktopOnChange = () => {
-    setDesktop(isDesktop.matches);
-  };
-  useEffect(() => {
-    isDesktop.addEventListener("change", isDesktopOnChange);
-    return () => isDesktop.removeEventListener("change", isDesktopOnChange);
-  }, []);
+
   return (
     <Button
       as={href ? "a" : "button"}
@@ -91,8 +82,7 @@ const CircleFillBtn = ({
           alignItems: "center",
           clipPath: `circle(${scale} at ${left} ${top})`,
           transition: `clip-path ${transitionTime} ease`,
-          animation:
-            desktop && !init && preview && `${bounce} 1.5s ease infinite`
+          animation: !init && preview && `${bounce} 1.5s ease infinite`
         },
         ...forwardSx
       }}
