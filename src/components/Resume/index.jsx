@@ -2,6 +2,7 @@ import { Flex, Heading } from "theme-ui";
 import { NAV_ITEMS } from "../../utils/constants";
 import CircleFillBtn from "../common/CircleFillBtn";
 import StylizedButton from "../common/StylizedButton";
+import resume from "./Sher_Sheikh_Resume.pdf";
 
 const Resume = ({ desktop }) => {
   return (
@@ -19,7 +20,7 @@ const Resume = ({ desktop }) => {
         >
           {desktop ? (
             <>
-              <CircleFillBtn href="Sher_Sheikh_Resume.pdf" download>
+              <CircleFillBtn href={resume} download>
                 Download PDF
               </CircleFillBtn>
               <CircleFillBtn
@@ -35,7 +36,7 @@ const Resume = ({ desktop }) => {
             <>
               <StylizedButton
                 as="a"
-                href="Sher_Sheikh_Resume.pdf"
+                href={resume}
                 download
                 styleOnHover={false}
               >
