@@ -11,7 +11,7 @@ const fadeIn = keyframes`
   }
 `;
 
-const MouseText = ({ children }) => {
+const MouseText = ({ children, monospace = false, background = false }) => {
   const mousePosition = useMousePosition();
   const isDesktop = window.matchMedia("(min-width: 1100px)");
   return (
@@ -27,7 +27,10 @@ const MouseText = ({ children }) => {
             mousePosition.y + 20 + "px"
           })`,
           pointerEvents: "none",
-          fontWeight: "bold",
+          fontWeight: !monospace && "bold",
+          fontFamily: monospace && "monospace",
+          backgroundColor: background && "rgba(0,0,0,0.8)",
+          padding: background && "5px 10px",
           animation: `${fadeIn} 0.25s ease`,
           textShadow: "-5px 5px 15px rgba(0,0,0,0.3)"
         }}

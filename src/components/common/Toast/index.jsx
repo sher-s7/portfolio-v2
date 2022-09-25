@@ -40,7 +40,7 @@ const Toast = ({ length, index, close, children }) => {
         animation: `${fadeInOut} ${length / 1000}s ease`,
         animationFillMode: "both",
         fontWeight: "bold",
-        background: "linear-gradient(45deg, #181818 0%, #3d3d3d 100%)",
+        background: "linear-gradient(45deg, #111111 0%, #262626 100%)",
         boxShadow: "-3px 5px 15px rgba(0, 0, 0, 0.2)",
         position: "absolute",
         transform: `translateY(calc(-100% * ${index * 1.2}))`,

@@ -19,7 +19,7 @@ const Linkedin = () => {
         gap: ["7px", "10px"]
       }}
     >
-      <Text sx={{ fontSize: [0, 1], fontWeight: "bold" }}>Linkedin</Text>
+      <Text sx={{ fontSize: [0, 1], fontWeight: "bold" }}>LinkedIn</Text>
       <Flex
         as="a"
         href="https://www.linkedin.com/in/sher-sheikh/"

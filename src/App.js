@@ -44,7 +44,7 @@ const App = () => {
       <ToastsContext.Provider value={{ toasts, addToast, removeToast }}>
         <Main />
         <Project />
-        <About />
+        <About desktop={desktop} />
         <Contact />
         <Resume desktop={desktop} />
         <Puzzle />

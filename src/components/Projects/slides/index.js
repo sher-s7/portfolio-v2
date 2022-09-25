@@ -16,7 +16,7 @@ const slides = [
     imgSrc: partplanner,
     name: "pc part planner",
     description:
-      "A list builder for building a PC. Created using Express.js and MongoDB.",
+      "A planner for building a PC. Created using Express.js and MongoDB.",
     code: "https://github.com/sher-s7/express-pc-part-planner",
     demo: "https://pc-part-planner.onrender.com/list"
   },
@@ -40,7 +40,7 @@ const slides = [
     imgSrc: weather,
     name: "weathercheck",
     description:
-      "A weather app created using React, OpenWeatherMap API, and the Geolocation API",
+      "A weather app created using React, OpenWeatherMap API, and the Geolocation API.",
     code: "https://github.com/sher-s7/react-weather-app",
     demo: "https://sher-s7.github.io/react-weather-app/"
   }
