@@ -1,20 +1,9 @@
 import { Flex, Heading } from "theme-ui";
 import { NAV_ITEMS } from "../../utils/constants";
 import CircleFillBtn from "../common/CircleFillBtn";
-import { useEffect, useState } from "react";
 import StylizedButton from "../common/StylizedButton";
 
-const Resume = () => {
-  const isDesktop = window.matchMedia("(min-width: 1100px)");
-  const [desktop, setDesktop] = useState(isDesktop.matches);
-
-  useEffect(() => {
-    const isDesktopOnChange = () => {
-      setDesktop(isDesktop.matches);
-    };
-    isDesktop.addEventListener("change", isDesktopOnChange);
-    return () => isDesktop.removeEventListener("change", isDesktopOnChange);
-  }, [isDesktop]);
+const Resume = ({ desktop }) => {
   return (
     <Flex as="section" sx={{ justifyContent: "center" }}>
       <Flex sx={{ flexDirection: "column", gap: ["25px", "40px"] }}>

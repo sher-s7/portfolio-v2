@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Flex, Link, ThemeProvider } from "theme-ui";
 import About from "./components/About";
 import Toast from "./components/common/Toast";
@@ -10,13 +10,23 @@ import Resume from "./components/Resume";
 import { ToastsContext } from "./context/Toasts";
 import theme from "./theme";
 import { ReactComponent as Github } from "./assets/github.svg";
-import ScrollToTop from "./components/common/ScrollToTop";
+import Sidebar from "./components/common/Sidebar";
 
 const TOAST_LENGTH = 3000;
 let toastCounter = 0;
 
 const App = () => {
   const [toasts, setToasts] = useState([]);
+  const isDesktop = window.matchMedia("(min-width: 1100px)");
+  const [desktop, setDesktop] = useState(isDesktop.matches);
+
+  useEffect(() => {
+    const isDesktopOnChange = () => {
+      setDesktop(isDesktop.matches);
+    };
+    isDesktop.addEventListener("change", isDesktopOnChange);
+    return () => isDesktop.removeEventListener("change", isDesktopOnChange);
+  }, [isDesktop]);
 
   const addToast = (toastText) => {
     if (!toasts.find((toast) => toast.text === toastText)) {
@@ -36,7 +46,7 @@ const App = () => {
         <Project />
         <About />
         <Contact />
-        <Resume />
+        <Resume desktop={desktop} />
         <Puzzle />
         <Flex
           sx={{
@@ -49,11 +59,12 @@ const App = () => {
             href="https://github.com/sher-s7/"
             target="_blank"
             rel="noreferrer"
+            sx={{ path: { fill: "text" } }}
           >
             <Github />
           </Link>
         </Flex>
-        <ScrollToTop />
+        <Sidebar desktop={desktop} />
         <Flex
           sx={{
             flexDirection: "column",

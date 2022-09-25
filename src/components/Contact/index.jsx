@@ -1,5 +1,6 @@
 import { Flex, Heading } from "theme-ui";
 import { NAV_ITEMS } from "../../utils/constants";
+
 import Email from "./Email";
 import Linkedin from "./Linkedin";
 

@@ -41,7 +41,7 @@ const About = () => {
             <Paragraph
               variant="default"
               sx={{
-                fontSize: [2, 3],
+                fontSize: [1, 2],
                 fontWeight: "light",
                 lineHeight: 1.35,
                 maxWidth: "630px"

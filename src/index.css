@@ -32,8 +32,14 @@ h2 {
   scroll-snap-margin-top: 150px;
 }
 
+h2#resume {
+  scroll-margin-top: 300px;
+  scroll-snap-margin-top: 300px;
+}
+
 section {
   padding: 50px 0;
+  position: relative;
 }
 
 section:first-of-type {

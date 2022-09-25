@@ -130,9 +130,15 @@ const Main = () => {
             }}
           >
             {Object.keys(NAV_ITEMS).map((key, i) => {
+              const isGithub = key === "github";
               return (
                 <StylizedButton
-                  href={`#${NAV_ITEMS[key]}`}
+                  href={
+                    isGithub
+                      ? "https://github.com/sher-s7/"
+                      : `#${NAV_ITEMS[key]}`
+                  }
+                  target={isGithub ? "_blank" : ""}
                   key={key + i}
                   as="a"
                   forwardSx={{
