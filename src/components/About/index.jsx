@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NAV_ITEMS } from "../../utils/constants";
 import { animateSpritesheet, METHODS } from "spritesheet-animate";
 import { Flex, Heading, Text, Paragraph, Box } from "theme-ui";
-import spritesheet from "./spritesheet.png";
+import spritesheet from "./spritesheet.webp";
 import MouseText from "../common/MouseText";
 
 const About = ({ desktop }) => {
