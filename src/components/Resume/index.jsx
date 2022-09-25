@@ -19,7 +19,7 @@ const Resume = ({ desktop }) => {
         >
           {desktop ? (
             <>
-              <CircleFillBtn href="./Sher_Sheikh_Resume.pdf" download>
+              <CircleFillBtn href="Sher_Sheikh_Resume.pdf" download>
                 Download PDF
               </CircleFillBtn>
               <CircleFillBtn
@@ -35,7 +35,7 @@ const Resume = ({ desktop }) => {
             <>
               <StylizedButton
                 as="a"
-                href="./Sher_Sheikh_Resume.pdf"
+                href="Sher_Sheikh_Resume.pdf"
                 download
                 styleOnHover={false}
               >
