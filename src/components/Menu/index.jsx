@@ -103,7 +103,11 @@ const Main = () => {
           >
             <Heading
               as="h1"
-              sx={{ lineHeight: "body", animation: `${fadeIn(1)} 2s ease` }}
+              sx={{
+                lineHeight: "body",
+                animation: `${fadeIn(1)} 2s ease`,
+                animationFillMode: "both"
+              }}
             >
               Sher Sheikh
             </Heading>

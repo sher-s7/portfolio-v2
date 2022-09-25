@@ -20,10 +20,8 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  background-image: url(./assets/bg2.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 30% 50%;
+  object-fit: cover;
+  object-position: 30% 50%;
   z-index: -1;
   pointer-events: none;
 }

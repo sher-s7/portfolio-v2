@@ -11,6 +11,7 @@ import { NextArrow, PrevArrow } from "./Arrows";
 const settings = {
   dots: false,
   arrows: true,
+  lazyLoad: true,
   infinite: true,
   speed: 500,
   slidesToShow: 3,

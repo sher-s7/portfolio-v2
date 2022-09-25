@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Flex, Link, ThemeProvider } from "theme-ui";
 import About from "./components/About";
 import Toast from "./components/common/Toast";
@@ -11,6 +11,7 @@ import { ToastsContext } from "./context/Toasts";
 import theme from "./theme";
 import { ReactComponent as Github } from "./assets/github.svg";
 import Sidebar from "./components/common/Sidebar";
+import bg from "./assets/bg2.jpg";
 
 const TOAST_LENGTH = 3000;
 let toastCounter = 0;
@@ -19,6 +20,16 @@ const App = () => {
   const [toasts, setToasts] = useState([]);
   const isDesktop = window.matchMedia("(min-width: 1100px)");
   const [desktop, setDesktop] = useState(isDesktop.matches);
+  const [bgLoaded, setBgLoaded] = useState(false);
+  const imgRef = useRef();
+
+  useEffect(() => {
+    if (!imgRef.current.complete) {
+      imgRef.current.onload = () => setBgLoaded(true);
+    } else {
+      setBgLoaded(true);
+    }
+  }, []);
 
   useEffect(() => {
     const isDesktopOnChange = () => {
@@ -42,29 +53,33 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <ToastsContext.Provider value={{ toasts, addToast, removeToast }}>
-        <Main />
-        <Project />
-        <About desktop={desktop} />
-        <Contact />
-        <Resume desktop={desktop} />
-        <Puzzle />
-        <Flex
-          sx={{
-            justifyContent: "center",
-            py: "50px",
-            svg: { width: "50px", height: "auto" }
-          }}
-        >
-          <Link
-            href="https://github.com/sher-s7/"
-            target="_blank"
-            rel="noreferrer"
-            sx={{ path: { fill: "text" } }}
-          >
-            <Github />
-          </Link>
-        </Flex>
-        <Sidebar desktop={desktop} />
+        {bgLoaded && (
+          <>
+            <Main />
+            <Project />
+            <About desktop={desktop} />
+            <Contact />
+            <Resume desktop={desktop} />
+            <Puzzle />
+            <Flex
+              sx={{
+                justifyContent: "center",
+                py: "50px",
+                svg: { width: "50px", height: "auto" }
+              }}
+            >
+              <Link
+                href="https://github.com/sher-s7/"
+                target="_blank"
+                rel="noreferrer"
+                sx={{ path: { fill: "text" } }}
+              >
+                <Github />
+              </Link>
+            </Flex>
+            <Sidebar desktop={desktop} />
+          </>
+        )}
         <Flex
           sx={{
             flexDirection: "column",
@@ -88,7 +103,17 @@ const App = () => {
             </Toast>
           ))}
         </Flex>
-        <div id="bg" />
+        <img
+          ref={imgRef}
+          src={bg}
+          id="bg"
+          alt="bg"
+          style={{
+            opacity: bgLoaded ? 1 : 0,
+            transition: "opacity 1s ease",
+            transitionDelay: "1s"
+          }}
+        />
       </ToastsContext.Provider>
     </ThemeProvider>
   );
