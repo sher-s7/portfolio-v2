@@ -145,7 +145,8 @@ const Email = () => {
             <Box>
               <Input
                 required
-                type="text"
+                type="email"
+                autoComplete="off"
                 aria-label="Your email"
                 placeholder="Your email"
                 name="email"
