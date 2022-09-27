@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Box, Flex } from "theme-ui";
+import { Box, Flex, Heading } from "theme-ui";
 import { NAV_ITEMS } from "../../utils/constants";
 import "./assets/style.css";
 import { ReactComponent as Shuffle } from "./assets/shuffle.svg";
@@ -10,7 +10,15 @@ const Puzzle = () => {
     require("./assets/script");
   }, []);
   return (
-    <Flex as="section" id={NAV_ITEMS.puzzle}>
+    <Flex as="section" id="puzzleSection">
+      <Heading
+        as="h2"
+        variant="h2"
+        id={NAV_ITEMS.puzzle}
+        sx={{ mb: ["25px", "40px"] }}
+      >
+        Hmm...
+      </Heading>
       <Box className="container" sx={{ px: "25px" }}>
         <Box className="puzzle"></Box>
       </Box>

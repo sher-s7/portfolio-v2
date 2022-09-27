@@ -27,7 +27,7 @@ const About = ({ desktop }) => {
         as="section"
         sx={{ justifyContent: "center", pb: ["25px", "50px"] }}
       >
-        <Flex sx={{ flexDirection: "column", gap: ["40px"] }}>
+        <Flex sx={{ flexDirection: "column", gap: ["25px", "40px"] }}>
           <Heading as="h2" variant="h2" id={NAV_ITEMS.about}>
             About me
           </Heading>

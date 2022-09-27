@@ -39,7 +39,7 @@ const Project = () => {
         sx={{
           flexDirection: "column",
           justifyContent: "center",
-          gap: "45px",
+          gap: ["30px", "45px"],
           pb: ["100px", null, "120px"]
         }}
       >
@@ -79,7 +79,7 @@ const Project = () => {
                   width: "100%",
                   height: "100%",
                   background:
-                    "linear-gradient(37.96deg, rgba(0, 0, 0, 0.49) 60.06%, rgba(136, 136, 136, 0) 75%)"
+                    "linear-gradient(37.96deg, rgba(0, 0, 0, 0.49) 30.06%, rgba(136, 136, 136, 0) 85%)"
                 }
               },
               "&:not(.slick-center)": {
