@@ -24,7 +24,7 @@ const Resume = ({ desktop }) => {
                 Download PDF
               </CircleFillBtn>
               <CircleFillBtn
-                href="https://drive.google.com/file/d/1oUjeYEGc-4FOEKF7Vn2Tkw8PysAjPlxf/view?usp=sharing"
+                href="https://drive.google.com/file/d/1gaiyUFtNYCV8TTKlrS9OQrs6T9pCHqbG/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
                 preview
@@ -44,7 +44,7 @@ const Resume = ({ desktop }) => {
               </StylizedButton>
               <StylizedButton
                 as="a"
-                href="https://drive.google.com/file/d/1oUjeYEGc-4FOEKF7Vn2Tkw8PysAjPlxf/view?usp=sharing"
+                href="https://drive.google.com/file/d/1gaiyUFtNYCV8TTKlrS9OQrs6T9pCHqbG/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
                 styleOnHover={false}
