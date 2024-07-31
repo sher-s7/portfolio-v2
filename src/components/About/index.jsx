@@ -74,8 +74,8 @@ const About = ({ desktop }) => {
                   maxWidth: "600px"
                 }}
               >
-                I'm a self-taught software developer. I've been creating
-                websites for over{" "}
+                I'm a software developer, and I've been creating websites for
+                over{" "}
                 <span
                   onMouseEnter={() =>
                     setMouseText("new Date().getFullYear() - 2019")
